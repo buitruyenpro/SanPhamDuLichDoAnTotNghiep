@@ -1,0 +1,4 @@
+WINDOWN + ; biểu tưởng cảm xúc
+>npm i nodemon --global cài đặt toàn cầu
+npm outdated kiểm tra cập nhật
+npm update tengoi

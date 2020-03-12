@@ -45,6 +45,18 @@ app.patch('/api/v1/tours/:id', (req, res) => {
     data: { tour: '<Updated tour here...>' }
   });
 });
+
+app.delete('/api/v1/tours/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  if (id > tours.length) {
+    return res.status(404).json({ status: 'fail', message: 'Invalid ID' });
+  }
+  res.status(204).json({
+    status: 'success',
+    data: null
+  });
+});
+
 app.post('/api/v1/tours', (req, res) => {
   //   console.log(req.body);
   const newId = tours[tours.length - 1].id + 1;

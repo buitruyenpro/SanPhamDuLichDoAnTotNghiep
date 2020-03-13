@@ -2,3 +2,4 @@ WINDOWN + ; biểu tưởng cảm xúc
 >npm i nodemon --global cài đặt toàn cầu
 npm outdated kiểm tra cập nhật
 npm update tengoi
+npm i eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-config-airbnb eslint-plugin-node eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react --save-dev

@@ -43,7 +43,7 @@ exports.createTour = async (req, res) => {
   } catch (err) {
     res.status(400).json({
       status: 'fail',
-      message: 'dữ liệu không hợp lệ được gửi!'
+      message: err
     });
   }
 };

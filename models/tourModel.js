@@ -9,11 +9,21 @@ const tourSchema = new mongoose.Schema({
   maxGroupSize: { type: Number, required: [true, 'Số người là bắt buộc'] },
   difficulty: { type: String, required: [true, 'Độ khó là bắt buộc!'] },
   priceDiscount: { type: Number },
-  summary: { type: String, trim: true, required: [true, 'Dữ liệu tóm tắt là bắt buộc!'] },
-  descriptors: { type: String },
-  imageCover: { type: String, required: [true, 'imageCover là bắt buộc!'] },
+  summary: {
+    type: String,
+    trim: true,
+    required: [true, 'A tour must have a summary']
+  },
+  description: {
+    type: String,
+    trim: true
+  },
+  imageCover: {
+    type: String,
+    required: [true, 'A tour must have a cover image'],
+    trim: true
+  },
   images: { type: [String] },
-  description: { type: String },
   createAt: { type: Date, default: Date.now() },
   startDates: { type: [Date] }
 });

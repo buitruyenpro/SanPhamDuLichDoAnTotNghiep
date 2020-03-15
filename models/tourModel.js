@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
+const slugify = require('slugify');
 
 const tourSchema = new mongoose.Schema(
   {
     name: { type: String, required: [true, 'Tên là bắt buộc!'], unique: true, trim: true },
+    slug: { type: String },
     ratingsAverage: { type: Number, default: 4.5 },
     ratingsQuantity: { type: Number, default: 0 },
     duration: { type: Number, required: [true, 'Thời gian là bắt buộc!'] },
@@ -33,6 +35,22 @@ const tourSchema = new mongoose.Schema(
     toObject: { virtuals: true }
   }
 );
+
+// DOCUMENT MIDDLEWARE: runs before .save() and .create()
+tourSchema.pre('save', function(next) {
+  this.slug = slugify(this.name, { lower: true });
+  // Cái này xuất hiện đầu tiên
+  next();
+});
+// tourSchema.post('save', function(doc, next) {
+//   console.log(doc);
+
+//   next();
+// });
+// tourSchema.pre('save', function(next) {
+//   console.log('Will save document...');
+//   next();
+// });
 tourSchema.virtual('durationWeeks').get(function() {
   return this.duration / 7;
 });

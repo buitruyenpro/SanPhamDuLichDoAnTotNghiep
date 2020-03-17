@@ -1,11 +1,15 @@
 const express = require('express');
 const morgan = require('morgan');
+const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const globalErrorHandler = require('./controllers/errorController');
 
 const AppError = require('./utils/appError');
 
 const app = express();
+// 1) GLOBAL MIDDLEWARES
+// Set security HTTP headers
+app.use(helmet());
 const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
 //MIDDLEWARE
@@ -21,7 +25,7 @@ const limiter = rateLimit({
 });
 app.use('/api', limiter);
 
-app.use(express.json());
+app.use(express.json({ limit: '10kb' }));
 
 app.use(express.static(`${__dirname}/public`));
 

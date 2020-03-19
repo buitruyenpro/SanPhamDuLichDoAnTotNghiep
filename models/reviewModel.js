@@ -1,5 +1,6 @@
 // review / rating / createdAt / ref to tour / ref to user
 const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
 const Tour = require('./tourModel');
 
 const reviewSchema = new mongoose.Schema(
@@ -34,8 +35,8 @@ const reviewSchema = new mongoose.Schema(
   }
 );
 
-// reviewSchema.index({ tour: 1, user: 1 }, { unique: true });
-
+reviewSchema.index({ tour: 1, user: 1 }, { unique: true });
+reviewSchema.plugin(uniqueValidator);
 reviewSchema.pre(/^find/, function(next) {
   this.populate({
     path: 'user',
@@ -87,5 +88,4 @@ reviewSchema.post(/^findOneAnd/, async function() {
 });
 
 const Review = mongoose.model('Review', reviewSchema);
-
 module.exports = Review;

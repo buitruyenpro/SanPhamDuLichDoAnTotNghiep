@@ -10,7 +10,12 @@ router.post('/forgotPassword', authController.forgotPassword);
 router.patch('/resetPassword/:token', authController.resetPassword);
 
 router.use(authController.protect);
-router.patch('/updateMe', userController.uploadUserPhoto, userController.updateMe);
+router.patch(
+  '/updateMe',
+  userController.uploadUserPhoto,
+  userController.resizeUserPhoto,
+  userController.updateMe
+);
 router.use(authController.restrictTo('admin'));
 router.patch('/updateMyPassword', authController.updatePassword);
 router.delete('/deleteMe', userController.deleteMe);

@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 
 const login = async (email, password) => {
-  console.log(email, password);
   try {
     const res = await axios({
       method: 'POST',
@@ -12,15 +11,15 @@ const login = async (email, password) => {
       }
     });
     console.log(res);
-    // if (res.data.status === 'success') {
-    //   showAlert('success', 'Logged in successfully!');
-    //   window.setTimeout(() => {
-    //     location.assign('/');
-    //   }, 1500);
-    // }
+    if (res.data.status === 'success') {
+      alert('Logged in successfully!');
+      window.setTimeout(() => {
+        // eslint-disable-next-line no-restricted-globals
+        location.assign('/');
+      }, 1500);
+    }
   } catch (err) {
-    // showAlert('error', err.response.data.message);
-    console.log(err.response.data.message);
+    alert(err.response.data.message);
   }
 };
 

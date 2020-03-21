@@ -4,6 +4,8 @@
   "description": "Learning node.js",
   "main": "index.js",
   "dependencies": {
+    "@babel/polyfill": "^7.8.7",
+    "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.5",
     "cross-env": "^7.0.2",
@@ -15,11 +17,13 @@
     "helmet": "^3.21.3",
     "hpp": "^0.2.3",
     "jsonwebtoken": "^8.5.1",
+    "mapbox": "^1.0.0-beta10",
     "moment": "^2.24.0",
     "mongoose": "^5.9.4",
     "mongoose-unique-validator": "^2.0.3",
     "morgan": "^1.9.1",
     "nodemailer": "^6.4.5",
+    "parcel-bundler": "^1.12.4",
     "pug": "^2.0.4",
     "slugify": "^1.4.0",
     "validator": "^12.2.0",
@@ -41,7 +45,9 @@
   "scripts": {
     "start": "nodemon server.js",
     "start:prod": "SET NODE_ENV=production & nodemon server.js",
-    "debug": "ndb server.js"
+    "debug": "ndb server.js",
+    "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
+    "build:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
   },
   "author": "BuiTruyen",
   "license": "ISC",

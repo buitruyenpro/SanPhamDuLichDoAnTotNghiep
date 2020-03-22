@@ -21,7 +21,9 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
       {
         name: `${tour.name} Tour`,
         description: tour.summary,
-        images: [`${req.protocol}://localhost:3000/img/tours/${tour.imageCover}`],
+        images: [
+          `https://zicxa.com/hinh-anh/wp-content/uploads/2019/06/H%C3%ACnh-%E1%BA%A3nh-phong-c%E1%BA%A3nh-thi%C3%AAn-nhi%C3%AAn-l%C3%A0m-h%C3%ACnh-n%E1%BB%81n-%C4%91%E1%BA%B9p-39-1.jpg`
+        ],
         amount: tour.price * 100,
         currency: 'usd',
         quantity: 1

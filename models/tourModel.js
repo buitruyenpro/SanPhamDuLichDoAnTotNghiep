@@ -166,6 +166,7 @@ tourSchema.pre(/^find/, function(next) {
   this.start = Date.now();
   next();
 });
+// Chỉ cho phép mình lấy những trường nào
 tourSchema.pre(/^find/, function(next) {
   this.populate({
     path: 'guides',

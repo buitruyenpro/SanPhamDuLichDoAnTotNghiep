@@ -6,3 +6,12 @@ npm i eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-confi
 171.251.150.77
 //https://www.kevinleary.net/regex-route-express/
 node import-dev-data.js --import
+
+deploy:
+ heroku login
+ heroku create
+ git push heroku master
+ chú ý nếu lỗi thì git pull
+
+đổi tên app:
+    heroku apps:rename dulichthegioi

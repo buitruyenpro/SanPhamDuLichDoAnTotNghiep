@@ -63,7 +63,7 @@ exports.updateMe = catchAsync(async (req, res, next) => {
       new AppError('This route is not for password updates. Please use /updateMyPassword.', 400)
     );
   }
-
+  console.log(req.file.filename);
   // 2) Filtered out unwanted fields names that are not allowed to be updated
   const filteredBody = filterObj(req.body, 'name', 'email');
   if (req.file) filteredBody.photo = req.file.filename;

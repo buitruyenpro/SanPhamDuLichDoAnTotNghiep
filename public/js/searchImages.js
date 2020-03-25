@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { showAlert } from './alerts';
-export const searchImages = async data => {
+export const searchImages = async (data = null) => {
   try {
     const url = '/api/v1/tours/searchImages';
     const res = await axios({

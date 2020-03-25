@@ -3,6 +3,7 @@ import '@babel/polyfill';
 import { displayMap } from './mapbox';
 import { login, logout } from './login';
 import { updateSettings } from './updateSettings';
+import { searchImages } from './searchImages';
 import { bookTour } from './stripe';
 import { showAlert } from './alerts';
 
@@ -11,6 +12,7 @@ const mapBox = document.getElementById('map');
 const loginForm = document.querySelector('.form--login');
 const logOutBtn = document.querySelector('.nav__el--logout');
 const userDataForm = document.querySelector('.form-user-data');
+const userDataFormSearch = document.querySelector('.form-search');
 const userPasswordForm = document.querySelector('.form-user-password');
 const bookBtn = document.getElementById('book-tour');
 
@@ -29,7 +31,17 @@ if (loginForm)
   });
 
 if (logOutBtn) logOutBtn.addEventListener('click', logout);
+// Tìm kiếm hình ảnh
+if (userDataFormSearch) {
+  userDataFormSearch.addEventListener('submit', e => {
+    e.preventDefault();
+    const form = new FormData();
+    form.append('photo', document.getElementById('photo').files[0]);
+    searchImages(form);
+  });
+}
 
+// Cập nhật thông tin người dùng
 if (userDataForm)
   userDataForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -37,9 +49,9 @@ if (userDataForm)
     form.append('name', document.getElementById('name').value);
     form.append('email', document.getElementById('email').value);
     form.append('photo', document.getElementById('photo').files[0]);
+    searchImages(form);
     updateSettings(form, 'data');
   });
-
 if (userPasswordForm)
   userPasswordForm.addEventListener('submit', async e => {
     e.preventDefault();

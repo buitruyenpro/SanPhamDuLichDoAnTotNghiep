@@ -1,6 +1,7 @@
 const express = require('express');
 const tourController = require('./../controllers/tourController');
 const authController = require('./../controllers/authController');
+const searchController = require('./../controllers/searchController');
 const reviewRouter = require('./../routes/reviewRoutes');
 
 const router = express.Router();
@@ -22,6 +23,12 @@ router
 // /tours-within?distance=233&center=-40,45&unit=mi
 // /tours-within/233/center/-40,45/unit/mi
 router.route('/distances/:latlng/unit/:unit').get(tourController.getDistances);
+router.patch(
+  '/searchImages',
+  searchController.uploadUserPhoto,
+  searchController.resizeUserPhoto,
+  searchController.searchImages
+);
 router
   .route('/')
   .get(tourController.getAllTours)

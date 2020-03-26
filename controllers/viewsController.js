@@ -3,6 +3,7 @@ const User = require('../models/userModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const Booking = require('../models/bookingModel');
+const fs = require('fs');
 
 exports.getOverview = catchAsync(async (req, res, next) => {
   // 1) Get tour data from collection
@@ -18,10 +19,19 @@ exports.getOverview = catchAsync(async (req, res, next) => {
 
 exports.getOverviewSearch = catchAsync(async (req, res, next) => {
   // 1) Get tour data from collection
-  const tours = await Tour.find();
 
-  // 2) Build template
-  // 3) Render that template using tour data from 1)
+  const data = fs.readFileSync('public/img/obj/data.txt', 'utf-8');
+  const arrayImages = data.split(',');
+  tours = [];
+  await Promise.all(
+    arrayImages.map(async (image, index) => {
+      const tour = await Tour.findOne({ keySearch: image });
+      if (tour != null) {
+        tours.push(tour);
+      }
+    })
+  );
+
   res.status(200).render('overview', {
     title: 'All Tours',
     tours

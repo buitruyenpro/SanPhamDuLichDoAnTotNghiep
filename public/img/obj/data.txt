@@ -1,1 +1,1 @@
-1_tour.png,2_tour.png,3_tour.png,4_tour.png,7_tour.png,5_tour.png,6_tour.png
+2_tour.png,6_tour.png,4_tour.png,7_tour.png,3_tour.png,1_tour.png,5_tour.png

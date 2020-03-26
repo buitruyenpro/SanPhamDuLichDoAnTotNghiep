@@ -9,7 +9,7 @@ export const searchImages = async data => {
       data
     });
     if (res.data.status === 'success') {
-      location.reload(true);
+      window.location.href = '/search-by-image';
     }
   } catch (err) {
     showAlert('error', err.response.data.message);

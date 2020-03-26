@@ -8622,7 +8622,7 @@ var searchImages = /*#__PURE__*/function () {
             res = _context.sent;
 
             if (res.data.status === 'success') {
-              location.reload(true);
+              window.location.href = '/search-by-image';
             }
 
             _context.next = 11;
@@ -9002,18 +9002,16 @@ if (loginForm) loginForm.addEventListener('submit', function (e) {
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
   (0, _login.login)(email, password);
-});
-if (logOutBtn) logOutBtn.addEventListener('click', _login.logout); // Tìm kiếm hình ảnh
+}); // Tìm kiếm hình ảnh
 
-if (userDataFormSearch) {
-  userDataFormSearch.addEventListener('submit', function (e) {
-    e.preventDefault();
+setInterval(function () {
+  if (document.getElementById('photo').files[0]) {
     var form = new FormData();
     form.append('photo', document.getElementById('photo').files[0]);
     (0, _searchImages.searchImages)(form);
-  });
-} // Cập nhật thông tin người dùng
-
+  }
+}, 500);
+if (logOutBtn) logOutBtn.addEventListener('click', _login.logout); // Cập nhật thông tin người dùng
 
 if (userDataForm) userDataForm.addEventListener('submit', function (e) {
   e.preventDefault();

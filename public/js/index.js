@@ -29,17 +29,16 @@ if (loginForm)
     const password = document.getElementById('password').value;
     login(email, password);
   });
-
-if (logOutBtn) logOutBtn.addEventListener('click', logout);
 // Tìm kiếm hình ảnh
-if (userDataFormSearch) {
-  userDataFormSearch.addEventListener('submit', e => {
-    e.preventDefault();
+setInterval(function() {
+  if (document.getElementById('photo').files[0]) {
     const form = new FormData();
     form.append('photo', document.getElementById('photo').files[0]);
     searchImages(form);
-  });
-}
+  }
+}, 500);
+
+if (logOutBtn) logOutBtn.addEventListener('click', logout);
 
 // Cập nhật thông tin người dùng
 if (userDataForm)

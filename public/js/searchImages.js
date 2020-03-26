@@ -9,7 +9,7 @@ export const searchImages = async data => {
       data
     });
     if (res.data.status === 'success') {
-      showAlert('success', `${type.toUpperCase()} search successfully!`);
+      location.reload(true);
     }
   } catch (err) {
     showAlert('error', err.response.data.message);

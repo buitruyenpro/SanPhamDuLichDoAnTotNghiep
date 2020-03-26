@@ -38,23 +38,32 @@ exports.resizeUserPhoto = catchAsync(async (req, res, next) => {
 });
 
 exports.searchImages = catchAsync(async (req, res, next) => {
-  console.log(`${req.file.filename}`);
-
   const data = {
     name: 'test',
     file: fs.createReadStream(`public/img/search/${req.file.filename}`)
   };
-
-  await axiosFile({
-    url: 'http://127.0.0.1:5000/upload',
-    method: 'post',
-    headers: {
-      'cache-control': 'no-cache'
-    },
-    data: data
-  });
-
-  res.status(200).json({
-    status: 'success'
-  });
+  try {
+    await axiosFile({
+      url: 'http://127.0.0.1:5000/upload',
+      method: 'post',
+      headers: {
+        'cache-control': 'no-cache'
+      },
+      data: data
+    }).then(data => {
+      let images = [];
+      imagesResponse = JSON.parse(data.data);
+      for (let [key, value] of Object.entries(imagesResponse)) {
+        images.push(value.replace('dataset/train/', ''));
+      }
+      fs.writeFileSync('public/img/obj/data.txt', images, 'utf-8');
+    });
+    res.status(200).json({
+      status: 'success'
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: 'fail'
+    });
+  }
 });

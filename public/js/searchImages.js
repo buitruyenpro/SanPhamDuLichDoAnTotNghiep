@@ -9,7 +9,6 @@ export const searchImages = async data => {
       data
     });
     if (res.data.status === 'success') {
-      console.log('2222222222222222222222222222222222');
       window.location.href = '/search-by-image';
     }
   } catch (err) {

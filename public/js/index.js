@@ -36,7 +36,7 @@ setInterval(function() {
     form.append('photo', document.getElementById('photo').files[0]);
     searchImages(form);
   }
-}, 1000);
+}, 100);
 
 if (logOutBtn) logOutBtn.addEventListener('click', logout);
 

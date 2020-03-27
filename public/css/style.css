@@ -1355,3 +1355,44 @@ body {
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
 }
+
+#formComment{
+    margin: 0px;
+    width: 811px;
+    height: 150px;
+    resize: none;
+    font-size: 18px;
+}
+
+.btn-comment{
+  margin-top: 12px;
+}
+
+.star {
+  color: goldenrod;
+  font-size: 4rem;
+  padding: 0 1rem; /* space out the stars */
+  
+}
+.star::before {
+  content: '\2606'; /* star outline */
+  cursor: pointer;
+}
+.star.rated::before {
+  /* the style for a selected star */
+  content: '\2605'; /* filled star */
+}
+
+.stars {
+  counter-reset: rateme 0;
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.star.rated {
+  counter-increment: rateme 1;
+}
+.stars::after {
+  content: counter(rateme) '/5';
+}

@@ -96,13 +96,14 @@ block content
         //-   a.btn.btn--green.span-all-rows(href='/login') Log in to book tour
 
       
-      form
+      form.form--comment
         .comment
-          .stars(data-rating='3')
+          .stars(data-rating='0')
             span.star &nbsp;
             span.star &nbsp;
             span.star &nbsp;
             span.star &nbsp;
             span.star &nbsp;
-          textarea#formComment.form-control.form__input(rows='3')
-      button.btn.btn--green.span-all-rows.btn-comment Comment
+          textarea.input--comment.form-control.form__input(rows='3', name='review')
+          input.form--hidden-comment(type = "hidden" value=`${tour._id}`)
+        button.btn.btn--green.span-all-rows.btn-comment Comment

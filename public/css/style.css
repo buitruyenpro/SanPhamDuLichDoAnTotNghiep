@@ -1356,7 +1356,7 @@ body {
   transform: translateY(-2px);
 }
 
-#formComment{
+.input--comment{
     margin: 0px;
     width: 811px;
     height: 150px;

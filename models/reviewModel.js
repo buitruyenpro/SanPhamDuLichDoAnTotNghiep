@@ -7,12 +7,12 @@ const reviewSchema = new mongoose.Schema(
   {
     review: {
       type: String,
-      required: [true, 'Review can not be empty!']
+      required: [true, 'Bình luận bài viết là bắt buộc!']
     },
     rating: {
       type: Number,
-      min: 1,
-      max: 5
+      min: [1, 'Đánh giá số sao phải nằm trong khoảng 1 - 5'],
+      max: [5, 'Đánh giá số sao phải nằm trong khoảng 1 - 5']
     },
     createdAt: {
       type: Date,
@@ -35,7 +35,7 @@ const reviewSchema = new mongoose.Schema(
   }
 );
 
-reviewSchema.index({ tour: 1, user: 1 }, { unique: true });
+// reviewSchema.index({ tour: 1, user: 1 }, { unique: true });
 reviewSchema.plugin(uniqueValidator);
 reviewSchema.pre(/^find/, function(next) {
   this.populate({

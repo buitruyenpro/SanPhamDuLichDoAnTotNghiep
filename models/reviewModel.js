@@ -9,6 +9,9 @@ const reviewSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Bình luận bài viết là bắt buộc!']
     },
+    classify: {
+      type: String
+    },
     rating: {
       type: Number,
       min: [1, 'Đánh giá số sao phải nằm trong khoảng 1 - 5'],

@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { showAlert } from './alerts';
 export const createReview = async data => {
-  console.log(data);
   try {
     const url = '/api/v1/reviews';
     const res = await axios({

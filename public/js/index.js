@@ -7,6 +7,7 @@ import { searchImages } from './searchImages';
 import { createReview } from './review';
 import { bookTour } from './stripe';
 import { showAlert } from './alerts';
+import axios from 'axios';
 
 // DOM ELEMENTS
 const mapBox = document.getElementById('map');
@@ -65,7 +66,17 @@ if (commentForm)
     const rating = document.querySelectorAll('.rated').length;
     const review = document.querySelector('.input--comment').value;
     const tour = document.querySelector('.form--hidden-comment').value;
-    createReview({ review, rating, tour });
+    axios
+      .post('http://localhost:5000/classify', {
+        comment: review
+      })
+      .then(function(response) {
+        const classify = response.data.message;
+        createReview({ review, rating, tour, classify });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
   });
 
 if (userPasswordForm)

@@ -1,0 +1,16 @@
+extends base
+
+block content
+  main.main
+    .login-form
+      h2.heading-secondary.ma-bt-lg THANH TOÁN BẰNG TIỀN ĐIỆN TỬ
+      form.form.form--login-wallet
+        .form__group
+          label.form__label(for='email') Tên tài khoản
+          input#email.form__input(type='email', placeholder='you@example.com', required)
+        .form__group.ma-bt-md
+          label.form__label(for='password') Mật khẩu
+          input#password.form__input(type='password', placeholder='••••••••', required, minlength='8')
+          input#code_user.form__input(type='hidden', value=`${user.id}`, required, minlength='8')
+        .form__group
+          button.btn.btn--green#btnWallet(data-tour-id=`${id}`) THANH TOÁN

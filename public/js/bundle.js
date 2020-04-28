@@ -8418,7 +8418,7 @@ exports.showAlert = showAlert;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.logout = exports.login = void 0;
+exports.logout = exports.loginWallet = exports.login = void 0;
 
 var _axios = _interopRequireDefault(require("axios"));
 
@@ -8481,8 +8481,8 @@ var login = /*#__PURE__*/function () {
 
 exports.login = login;
 
-var logout = /*#__PURE__*/function () {
-  var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+var loginWallet = /*#__PURE__*/function () {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(email, password, tourId, idUser) {
     var res;
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
@@ -8491,21 +8491,33 @@ var logout = /*#__PURE__*/function () {
             _context2.prev = 0;
             _context2.next = 3;
             return (0, _axios.default)({
-              method: 'GET',
-              url: '/api/v1/users/logout'
+              method: 'POST',
+              url: '/api/v1/users/loginWallet',
+              data: {
+                email: email,
+                password: password,
+                tourId: tourId,
+                idUser: idUser
+              }
             });
 
           case 3:
             res = _context2.sent;
-            if (res.data.status = 'success') location.reload(true);
+
+            http: if (res.data.status === 'success') {
+              (0, _alerts.showAlert)('success', 'Thanh toán thành công!');
+              window.setTimeout(function () {
+                location.assign('/my-tours');
+              }, 1500);
+            }
+
             _context2.next = 10;
             break;
 
           case 7:
             _context2.prev = 7;
             _context2.t0 = _context2["catch"](0);
-            // console.log(err.response);
-            (0, _alerts.showAlert)('error', 'Error logging out! Try again.');
+            (0, _alerts.showAlert)('error', 'Thanh toán không thành công!');
 
           case 10:
           case "end":
@@ -8515,8 +8527,49 @@ var logout = /*#__PURE__*/function () {
     }, _callee2, null, [[0, 7]]);
   }));
 
-  return function logout() {
+  return function loginWallet(_x3, _x4, _x5, _x6) {
     return _ref2.apply(this, arguments);
+  };
+}();
+
+exports.loginWallet = loginWallet;
+
+var logout = /*#__PURE__*/function () {
+  var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
+    var res;
+    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.prev = 0;
+            _context3.next = 3;
+            return (0, _axios.default)({
+              method: 'GET',
+              url: '/api/v1/users/logout'
+            });
+
+          case 3:
+            res = _context3.sent;
+            if (res.data.status = 'success') location.reload(true);
+            _context3.next = 10;
+            break;
+
+          case 7:
+            _context3.prev = 7;
+            _context3.t0 = _context3["catch"](0);
+            // console.log(err.response);
+            (0, _alerts.showAlert)('error', 'Error logging out! Try again.');
+
+          case 10:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3, null, [[0, 7]]);
+  }));
+
+  return function logout() {
+    return _ref3.apply(this, arguments);
   };
 }();
 
@@ -8665,6 +8718,8 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+var commentForm = document.querySelector('.form--comment');
+
 var createReview = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(data) {
     var url, res;
@@ -8685,7 +8740,13 @@ var createReview = /*#__PURE__*/function () {
             res = _context.sent;
 
             if (res.data.status === 'success') {
-              (0, _alerts.showAlert)('success', "C\xE1m \u01A1n b\u1EA1n \u0111\xE3 \u0111\u1EC3 l\u1EA1i \u0111\xE1nh gi\xE1!");
+              if (data.classify == 'tích cực') {
+                (0, _alerts.showAlert)('success', "C\xE1m \u01A1n b\u1EA1n \u0111\xE3 \u0111\u1EC3 l\u1EA1i l\u1EDDi \u0111\xE1nh gi\xE1 t\xEDch c\u1EF1c!");
+              } else {
+                (0, _alerts.showAlert)('error', "C\xE1m \u01A1n b\u1EA1n \u0111\xE3 \u0111\u1EC3 l\u1EA1i \u0111\xE1nh gi\xE1, ch\xFAng t\xF4i s\u1EBD g\u1EAFng c\u1EA3i thi\u1EC7n t\u1ED1t h\u01A1n!");
+              }
+
+              commentForm.style.display = 'none';
             }
 
             _context.next = 11;
@@ -8737,32 +8798,33 @@ var bookTour = /*#__PURE__*/function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            _context.prev = 0;
-            _context.next = 3;
+            window.location.href = '/search-by-image';
+            _context.prev = 1;
+            _context.next = 4;
             return (0, _axios.default)("/api/v1/bookings/checkout-session/".concat(tourId));
 
-          case 3:
+          case 4:
             session = _context.sent;
-            _context.next = 6;
+            _context.next = 7;
             return stripe.redirectToCheckout({
               sessionId: session.data.session.id
             });
 
-          case 6:
-            _context.next = 11;
+          case 7:
+            _context.next = 12;
             break;
 
-          case 8:
-            _context.prev = 8;
-            _context.t0 = _context["catch"](0);
+          case 9:
+            _context.prev = 9;
+            _context.t0 = _context["catch"](1);
             (0, _alerts.showAlert)('error', _context.t0);
 
-          case 11:
+          case 12:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[0, 8]]);
+    }, _callee, null, [[1, 9]]);
   }));
 
   return function bookTour(_x) {
@@ -9054,7 +9116,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 // DOM ELEMENTS
 var mapBox = document.getElementById('map');
-var loginForm = document.querySelector('.form--login'); // COMMENT REVIEWS
+var loginForm = document.querySelector('.form--login');
+var loginFormWallet = document.querySelector('.form--login-wallet'); // COMMENT REVIEWS
 
 var commentForm = document.querySelector('.form--comment'); //SEARCH
 
@@ -9062,7 +9125,9 @@ var searchForm = document.querySelector('.form__upload_search');
 var logOutBtn = document.querySelector('.nav__el--logout');
 var userDataForm = document.querySelector('.form-user-data');
 var userPasswordForm = document.querySelector('.form-user-password');
-var bookBtn = document.getElementById('book-tour'); // DELEGATION
+var bookBtn = document.getElementById('book-tour');
+var bookBtn2 = document.getElementById('book-tour2');
+var btnWallet = document.getElementById('btnWallet'); // DELEGATION
 
 if (mapBox) {
   var locations = JSON.parse(mapBox.dataset.locations);
@@ -9074,6 +9139,14 @@ if (loginForm) loginForm.addEventListener('submit', function (e) {
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
   (0, _login.login)(email, password);
+});
+if (loginFormWallet) btnWallet.addEventListener('click', function (e) {
+  e.preventDefault();
+  var email = document.getElementById('email').value;
+  var idUser = document.getElementById('code_user').value;
+  var password = document.getElementById('password').value;
+  var tourId = e.target.dataset.tourId;
+  (0, _login.loginWallet)(email, password, tourId, idUser);
 }); // Tìm kiếm hình ảnh
 
 if (searchForm) {
@@ -9155,9 +9228,16 @@ if (userPasswordForm) userPasswordForm.addEventListener('submit', /*#__PURE__*/f
   };
 }());
 if (bookBtn) bookBtn.addEventListener('click', function (e) {
+  bookBtn2.style.display = 'none';
   e.target.textContent = 'Processing...';
   var tourId = e.target.dataset.tourId;
   (0, _stripe.bookTour)(tourId);
+});
+if (bookBtn2) bookBtn2.addEventListener('click', function (e) {
+  bookBtn.style.display = 'none';
+  e.target.textContent = 'Processing...';
+  var tourId = e.target.dataset.tourId;
+  window.location.href = '/blockchain/' + tourId;
 });
 var alertMessage = document.querySelector('body').dataset.alert;
 if (alertMessage) (0, _alerts.showAlert)('success', alertMessage, 20);
@@ -9189,7 +9269,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50949" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62991" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

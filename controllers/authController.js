@@ -5,6 +5,9 @@ const User = require('./../models/userModel');
 const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');
 const Email = require('./../utils/email');
+const axios = require('axios');
+const Tour = require('../models/tourModel');
+const Booking = require('../models/bookingModel');
 
 const signToken = id => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -93,7 +96,45 @@ exports.protect = catchAsync(async (req, res, next) => {
   res.locals.user = currentUser;
   next();
 });
+exports.loginWallet = catchAsync(async (req, res, next) => {
+  const { email, password, tourId, idUser } = req.body;
+  const tourObj = await Tour.findById(tourId);
 
+  data = {
+    recipient: 'admin123',
+    amount: tourObj.price
+  };
+  axios
+    .post('http://127.0.0.1:8000/api/signin/', {
+      username: email,
+      password: password
+    })
+    .then(response => {
+      try {
+        axios
+          .post('http://127.0.0.1:8000/api/wallet/transact/', data, {
+            headers: {
+              Authorization: `token ${response.data.token}`
+            }
+          })
+          .then(() => {
+            Booking.create({ tour: tourId, user: idUser, price: tourObj.price });
+            res.status(200).json({
+              status: 'success'
+            });
+          })
+          .catch(error => {
+            console.log(error);
+            next();
+          });
+
+        // Booking.create({ tour, idUser, price });
+      } catch (error) {
+        console.log(error);
+      }
+    })
+    .catch(error => {});
+});
 // Only for rendered pages, no errors!
 exports.isLoggedIn = async (req, res, next) => {
   if (req.cookies.jwt) {

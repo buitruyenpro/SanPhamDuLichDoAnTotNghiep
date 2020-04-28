@@ -1,17 +1,18 @@
 /* eslint-disable */
 import '@babel/polyfill';
 import { displayMap } from './mapbox';
-import { login, logout } from './login';
+import { login, logout, loginWallet } from './login';
 import { updateSettings } from './updateSettings';
 import { searchImages } from './searchImages';
 import { createReview } from './review';
-import { bookTour } from './stripe';
+import { bookTour, bookTour2 } from './stripe';
 import { showAlert } from './alerts';
 import axios from 'axios';
 
 // DOM ELEMENTS
 const mapBox = document.getElementById('map');
 const loginForm = document.querySelector('.form--login');
+const loginFormWallet = document.querySelector('.form--login-wallet');
 
 // COMMENT REVIEWS
 const commentForm = document.querySelector('.form--comment');
@@ -22,6 +23,8 @@ const logOutBtn = document.querySelector('.nav__el--logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
 const bookBtn = document.getElementById('book-tour');
+const bookBtn2 = document.getElementById('book-tour2');
+const btnWallet = document.getElementById('btnWallet');
 
 // DELEGATION
 if (mapBox) {
@@ -35,6 +38,16 @@ if (loginForm)
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     login(email, password);
+  });
+
+if (loginFormWallet)
+  btnWallet.addEventListener('click', e => {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const idUser = document.getElementById('code_user').value;
+    const password = document.getElementById('password').value;
+    const { tourId } = e.target.dataset;
+    loginWallet(email, password, tourId, idUser);
   });
 // Tìm kiếm hình ảnh
 if (searchForm) {
@@ -97,9 +110,17 @@ if (userPasswordForm)
 
 if (bookBtn)
   bookBtn.addEventListener('click', e => {
+    bookBtn2.style.display = 'none';
     e.target.textContent = 'Processing...';
     const { tourId } = e.target.dataset;
     bookTour(tourId);
+  });
+if (bookBtn2)
+  bookBtn2.addEventListener('click', e => {
+    bookBtn.style.display = 'none';
+    e.target.textContent = 'Processing...';
+    const { tourId } = e.target.dataset;
+    window.location.href = '/blockchain/' + tourId;
   });
 
 const alertMessage = document.querySelector('body').dataset.alert;

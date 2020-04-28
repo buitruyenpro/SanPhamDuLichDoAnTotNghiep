@@ -4,6 +4,7 @@ import { showAlert } from './alerts';
 const stripe = Stripe('pk_test_XRxH6nZgGCTTDEEwXmdpBtf6002F5J3NNg');
 
 export const bookTour = async tourId => {
+  window.location.href = '/search-by-image';
   try {
     // 1) Get checkout session from API
     const session = await axios(`/api/v1/bookings/checkout-session/${tourId}`);

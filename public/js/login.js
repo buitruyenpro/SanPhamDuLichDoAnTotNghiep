@@ -23,6 +23,29 @@ export const login = async (email, password) => {
   }
 };
 
+export const loginWallet = async (email, password, tourId, idUser) => {
+  try {
+    const res = await axios({
+      method: 'POST',
+      url: '/api/v1/users/loginWallet',
+      data: {
+        email,
+        password,
+        tourId,
+        idUser
+      }
+    });
+    http: if (res.data.status === 'success') {
+      showAlert('success', 'Thanh toán thành công!');
+      window.setTimeout(() => {
+        location.assign('/my-tours');
+      }, 1500);
+    }
+  } catch (err) {
+    showAlert('error', 'Thanh toán không thành công!');
+  }
+};
+
 export const logout = async () => {
   try {
     const res = await axios({

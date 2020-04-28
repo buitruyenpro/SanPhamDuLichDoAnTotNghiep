@@ -69,6 +69,12 @@ exports.getAccount = (req, res) => {
   });
 };
 
+exports.BuyByBlockchain = (req, res) => {
+  res.status(200).render('blockchain', {
+    id: req.params.tourId
+  });
+};
+
 exports.updateUserData = catchAsync(async (req, res, next) => {
   const updatedUser = await User.findByIdAndUpdate(
     req.user.id,

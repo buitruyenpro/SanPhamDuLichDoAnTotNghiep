@@ -5,6 +5,7 @@ const Tour = require('./../models/tourModel');
 const catchAsync = require('./../utils/catchAsync');
 const factory = require('./handlerFactory');
 const AppError = require('./../utils/appError');
+const Booking = require('../models/bookingModel');
 
 const multerStorage = multer.memoryStorage();
 
@@ -66,6 +67,16 @@ exports.aliasTopTours = (req, res, next) => {
   req.query.fields = 'name,price,ratingsAverage,summary,difficulty';
   next();
 };
+exports.isCheckBuyTour = catchAsync(async (req, res, next) => {
+  const tourObj = await Tour.findOne({ slug: req.params.slug });
+  const isExit = await Booking.findOne({ tour: tourObj.id });
+  if (isExit) {
+    res.locals.isExit = true;
+  } else {
+    res.locals.isExit = false;
+  }
+  next();
+});
 
 exports.getAllTours = factory.getAll(Tour);
 

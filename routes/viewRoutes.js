@@ -2,6 +2,7 @@ const express = require('express');
 const viewsController = require('../controllers/viewsController');
 const authController = require('./../controllers/authController');
 const bookingController = require('./../controllers/bookingController');
+const tourController = require('./../controllers/tourController');
 
 const router = express.Router();
 
@@ -19,7 +20,12 @@ router.get(
   authController.isLoggedIn,
   viewsController.getOverviewSearch
 );
-router.get('/tour/:slug', authController.isLoggedIn, viewsController.getTour);
+router.get(
+  '/tour/:slug',
+  authController.isLoggedIn,
+  tourController.isCheckBuyTour,
+  viewsController.getTour
+);
 router.get('/login', authController.isLoggedIn, viewsController.getLoginForm);
 router.get('/me', authController.protect, viewsController.getAccount);
 router.get('/blockchain/:tourId', authController.protect, viewsController.BuyByBlockchain);

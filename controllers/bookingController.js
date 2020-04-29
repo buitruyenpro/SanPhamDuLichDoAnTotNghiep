@@ -24,7 +24,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
       {
         name: `${tour.name} Tour`,
         description: tour.summary,
-        images: [`${req.protocol}://${req.get('host')}/img/tours/${tour.imageCover}`],
+        images: 'https://natours.netlify.app/img/logo-green-2x.png',
         amount: tour.price * 100,
         currency: 'usd',
         quantity: 1

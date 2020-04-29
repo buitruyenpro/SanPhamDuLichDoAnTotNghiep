@@ -101,7 +101,7 @@ exports.loginWallet = catchAsync(async (req, res, next) => {
   const tourObj = await Tour.findById(tourId);
 
   data = {
-    recipient: 'admin123',
+    recipient: 'admin@gmail.com',
     amount: tourObj.price
   };
   axios

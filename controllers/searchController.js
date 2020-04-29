@@ -29,15 +29,15 @@ exports.resizeUserPhoto = catchAsync(async (req, res, next) => {
   req.file.filename = `image-${Date.now()}.jpeg`;
 
   await sharp(req.file.buffer)
-    .resize(32, 32)
     .toFormat('jpeg')
-    .jpeg({ quality: 90 })
+    .jpeg({ quality: 100 })
     .toFile(`public/img/search/${req.file.filename}`);
 
   next();
 });
 
 exports.searchImages = catchAsync(async (req, res, next) => {
+  fs.writeFileSync('public/img/obj/data.txt', '', 'utf-8');
   const data = {
     name: 'test',
     file: fs.createReadStream(`public/img/search/${req.file.filename}`)
@@ -51,7 +51,7 @@ exports.searchImages = catchAsync(async (req, res, next) => {
       },
       data: data
     }).then(data => {
-      let images = [];
+      const images = [];
       imagesResponse = JSON.parse(data.data);
       for (let [key, value] of Object.entries(imagesResponse)) {
         images.push(value.replace('dataset/train/', ''));
@@ -66,4 +66,5 @@ exports.searchImages = catchAsync(async (req, res, next) => {
       status: 'fail'
     });
   }
+  next();
 });

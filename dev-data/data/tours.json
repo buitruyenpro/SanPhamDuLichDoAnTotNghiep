@@ -15,14 +15,14 @@
       "2021-08-18T09:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c2955",
-    "name": "The Sea Explorer",
+    "name": "Nhà thám hiểm biển",
     "duration": 7,
     "maxGroupSize": 15,
     "difficulty": "medium",
     "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a1f4e2f8fb814b56fa185"],
-    "price": 497,
-    "summary": "Exploring the jaw-dropping US east coast by foot and by boat",
-    "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "price": 100,
+    "summary": "Khám phá bờ biển phía đông Hoa Kỳ bằng cách đi bộ và bằng thuyền",
+    "description": "Đi du lịch bằng du thuyền 5 sao hạng sang vốn đã phổ biến trên thế giới từ rất lâu nhưng mới chỉ nở rộ ở Việt Nam trong vài năm trở lại đây, tuy nhiên, mức tăng trưởng lại cực kỳ mạnh mẽ. Chỉ tính riêng trong năm 2018, Việt Nam đã đón gần 500 lượt ra vào của các hải trình lớn nhỏ, trở thành quốc gia có lượng du thuyền cập bến nhiều thứ tư ở khu vực châu Á.",
     "imageCover": "tour-2-cover.jpg",
     "keySearch": "8_tour.png",
     "locations": [
@@ -72,14 +72,14 @@
       "2021-10-05T09:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c2951",
-    "name": "The Forest Hiker",
+    "name": "Đi rừng leo núi",
     "duration": 5,
     "maxGroupSize": 25,
     "difficulty": "easy",
     "guides": ["5c8a21d02f8fb814b56fa189", "5c8a201e2f8fb814b56fa186", "5c8a1f292f8fb814b56fa184"],
-    "price": 397,
-    "summary": "Breathtaking hike through the Canadian Banff National Park",
-    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "price": 39,
+    "summary": "Đi bộ ngoạn mục qua Vườn quốc gia Banff Canada",
+    "description": "Với những tín đồ yêu thích loại hình du lịch rừng, thì mùa hè được xem là thời điểm lý tưởng để bắt đầu một chuyến đi thú vị. Không chỉ được trải nghiệm cảm giác phiêu lưu, mạo hiểm, du lịch rừng còn giúp các bạn được hòa mình vào thiên nhiên, ngắm nhìn cảnh quan tươi đẹp, hoang sơ, yên bình và nhiều bí ẩn. Cùng Madagui khám phá những khu rừng đẹp nức tiếng của Việt Nam, và học hỏi một số kinh nghiệm hay ho từ loại hình du lịch này nhé!",
     "imageCover": "tour-1-cover.jpg",
     "keySearch": "9_tour.png",
     "locations": [
@@ -122,14 +122,14 @@
       "2023-01-06T10:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c295a",
-    "name": "The Snow Adventurer",
+    "name": "Nhà thám hiểm tuyết",
     "duration": 4,
     "maxGroupSize": 10,
     "difficulty": "difficult",
     "guides": ["5c8a21d02f8fb814b56fa189", "5c8a23412f8fb814b56fa18c", "5c8a1f4e2f8fb814b56fa185"],
-    "price": 997,
-    "summary": "Exciting adventure in the snow with snowboarding and skiing",
-    "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum!\nDolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipisicing elit!",
+    "price": 50,
+    "summary": "Cuộc phiêu lưu thú vị trong tuyết với trượt tuyết và trượt tuyết",
+    "description": "Khi những bông tuyết bắt đầu rơi trên mặt đường báo hiệu mùa ... thích sự phiêu lưu và khát khao chinh phục những dốc núi hiểm trở. ... lớp hướng dẫn và thử sức với trò chơi trượt tuyết trong nhà trước khi ... Chúc quý vị một chuyến trượt tuyết với nhiều thú vị cùng gia đình và bạn bè trong mùa đông này .",
     "imageCover": "tour-3-cover.jpg",
     "keySearch": "10_tour.png",
     "locations": [
@@ -165,14 +165,14 @@
       "2022-08-12T09:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c2961",
-    "name": "The Park Camper",
+    "name": "Công viên cắm trại",
     "duration": 10,
     "maxGroupSize": 15,
     "difficulty": "medium",
     "guides": ["5c8a21f22f8fb814b56fa18a", "5c8a23412f8fb814b56fa18c", "5c8a201e2f8fb814b56fa186"],
-    "price": 1497,
-    "summary": "Breathing in Nature in America's most spectacular National Parks",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum!",
+    "price": 150,
+    "summary": "Hít thở thiên nhiên tại các công viên quốc gia ngoạn mục nhất nước Mỹ",
+    "description": "Nước Mỹ rộng lớn với thiên nhiên ngoạn mục luôn cuốn hút du khách bốn phương tới thăm và khám phá. Từ những khu rừng xanh tươi, những ngọn núi kỳ vĩ, thác nước hoành tráng… và còn cả vẻ đẹp đầy say đắm của những hồ nước. Cùng điểm danh 10 hồ nước đẹp nhất nước Mỹ.",
     "imageCover": "tour-5-cover.jpg",
     "keySearch": "11_tour.png",
     "locations": [
@@ -222,14 +222,14 @@
       "2021-06-09T09:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c295d",
-    "name": "The City Wanderer",
+    "name": "Người lang thang thành phố",
     "duration": 9,
     "maxGroupSize": 20,
     "difficulty": "easy",
     "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a201e2f8fb814b56fa186"],
-    "price": 1197,
-    "summary": "Living the life of Wanderlust in the US' most beatiful cities",
-    "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat lorem ipsum dolor sit amet.\nConsectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat!",
+    "price": 120,
+    "summary": "Sống cuộc sống của Wanderlust tại các thành phố đẹp nhất nước Mỹ",
+    "description": "Nước Mỹ rộng lớn với thiên nhiên ngoạn mục luôn cuốn hút du khách bốn phương tới thăm và khám phá. Từ những khu rừng xanh tươi, những ngọn núi kỳ vĩ, thác nước hoành tráng… và còn cả vẻ đẹp đầy say đắm của những hồ nước. Cùng điểm danh 10 hồ nước đẹp nhất nước Mỹ.",
     "imageCover": "tour-4-cover.jpg",
     "keySearch": "12_tour.png",
     "locations": [
@@ -272,14 +272,14 @@
       "2022-03-18T10:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c2966",
-    "name": "The Sports Lover",
+    "name": "Người yêu thể thao",
     "duration": 14,
     "maxGroupSize": 8,
     "difficulty": "difficult",
     "guides": ["5c8a21f22f8fb814b56fa18a", "5c8a1f292f8fb814b56fa184", "5c8a1f4e2f8fb814b56fa185"],
-    "price": 2997,
-    "summary": "Surfing, skating, parajumping, rock climbing and more, all in one tour",
-    "description": "Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nVoluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur!",
+    "price": 297,
+    "summary": "Lướt sóng, trượt băng, nhảy dù, leo núi và nhiều hơn nữa, tất cả trong một tour",
+    "description": "Lướt sóng bằng ván trượt ở Bangkok có thể bị giới hạn bởi các loại dây cáp, ... cơ sở vật chất hào nhoáng và nhiều chướng ngại vật thử thách hơn cho nên chi ... dành cho bạn cơ hội leo núi tuyệt vời trong ngày tại trung tâm thủ đô Bangkok. ... từ 500 baht cho một vòng đua và mở",
     "imageCover": "tour-6-cover.jpg",
     "keySearch": "13_tour.png",
     "locations": [
@@ -336,36 +336,36 @@
       "2022-01-30T10:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c2970",
-    "name": "The Star Gazer",
+    "name": "Vịnh Hạ Long",
     "duration": 9,
     "maxGroupSize": 8,
     "difficulty": "medium",
     "guides": ["5c8a21d02f8fb814b56fa189", "5c8a1f292f8fb814b56fa184"],
-    "price": 2997,
-    "summary": "The most remote and stunningly beautiful places for seeing the night sky",
-    "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "price": 290,
+    "summary": "Trong diện tích 1.553 km² gồm vùng lõi và vùng đệm, nằm tại các tọa độ từ 106°58'-107°22' Đông và 20°45'-20°50' Bắc, vịnh Hạ Long bao gồm 1.969 hòn đảo lớn ..",
+    "description": "Vịnh Hạ Long là một di sản độc đáo bởi địa danh này chứa đựng những dấu tích quan trọng trong quá trình hình thành và phát triển lịch sử trái đất, là cái nôi cư trú của người Việt cổ, đồng thời là tác phẩm nghệ thuật tạo hình vĩ đại của thiên nhiên với sự hiện diện của hàng nghìn đảo đá muôn hình vạn trạng, với nhiều hang động kỳ thú quần tụ thành một thế giới vừa sinh động vừa huyền bí. Bên cạnh đó, vịnh Hạ Long còn là nơi tập trung đa dạng sinh học cao với những hệ sinh thái điển hình cùng với hàng nghìn loài động thực vật vô cùng phong phú, đa dạng. Nơi đây còn gắn liền với những giá trị văn hóa – lịch sử hào hùng của dân tộc.",
     "imageCover": "tour-8-cover.jpg",
-    "keySearch": "14_tour.png",
+    "keySearch": "1_tour.png",
     "locations": [
       {
         "_id": "5c88fa8cf4afda39709c2973",
-        "description": "Natural Bridges National Monument",
+        "description": "Biển đảo",
         "type": "Point",
-        "coordinates": [-109.99953, 37.629017],
+        "coordinates": [107.0490589, 20.959651],
         "day": 1
       },
       {
         "_id": "5c88fa8cf4afda39709c2972",
-        "description": "Horseshoe Bend",
+        "description": "Khách sản",
         "type": "Point",
-        "coordinates": [-111.50954, 36.883269],
+        "coordinates": [107.0457628, 20.9590188],
         "day": 3
       },
       {
         "_id": "5c88fa8cf4afda39709c2971",
-        "description": "Death Valley National Park",
+        "description": "Vịnh Hạ Long",
         "type": "Point",
-        "coordinates": [-117.07399, 36.501435],
+        "coordinates": [107.0095368, 20.8437292],
         "day": 6
       }
     ]
@@ -386,16 +386,16 @@
       "2022-12-12T10:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c2974",
-    "name": "The Northern Lights",
+    "name": "Ngắm sao đêm",
     "duration": 3,
     "maxGroupSize": 12,
     "difficulty": "easy",
     "guides": ["5c8a21f22f8fb814b56fa18a", "5c8a201e2f8fb814b56fa186", "5c8a23412f8fb814b56fa18c"],
-    "price": 1497,
-    "summary": "Enjoy the Northern Lights in one of the best places in the world",
-    "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum!\nDolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipisicing elit!",
+    "price": 147,
+    "summary": "Khu bảo tồn bầu trời đêm đầu tiên của xứ Wales đã giảm thiểu ô nhiễm ánh sáng một cách hiệu quả ... ngoài vị trí cách xa các thành phố lớn, Death Valley là một địa điểm",
+    "description": "Trong nhiều thế kỷ trôi qua, những đột phá trong khoa học và công nghệ đã cho phép chúng ta có cơ hội chiêm ngưỡng vẻ đẹp huyền ảo của vũ trụ dễ dàng hơn bao giờ hết. Đại đa số chúng ta sống ở những khu vực có mức độ ô nhiễm ánh sáng cao, che khuất nhiều ngôi sao khỏi tầm nhìn. Ở nhiều khu vực thành thị thậm chí bạn không thể nhìn thấy bất cứ thứ gì ngoài bầu trời dày đặc sương bụi và khói. May mắn thay, vẫn còn nhiều nơi trên khắp thế giới để bạn có thể chứng kiến trọn vẹn vẻ đẹp bầu trời đêm với khung cảnh ngoạn mục của những vì sao, Dải Ngân hà và vũ trụ. Hãy cùng khám phá 11 địa điểm kỳ ảo đó qua bài tổng hợp dưới đây",
     "imageCover": "tour-9-cover.jpg",
-    "keySearch": "15_tour.png",
+    "keySearch": "14_tour.png",
     "locations": [
       {
         "_id": "5c88fa8cf4afda39709c2975",
@@ -422,14 +422,14 @@
       "2021-09-01T09:00:00.000Z"
     ],
     "_id": "5c88fa8cf4afda39709c296c",
-    "name": "The Wine Taster",
+    "name": "Người thưởng thức rượu",
     "duration": 5,
     "maxGroupSize": 8,
     "difficulty": "easy",
     "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a23412f8fb814b56fa18c"],
-    "price": 1997,
-    "summary": "Exquisite wines, scenic views, exclusive barrel tastings,  and much more",
-    "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "price": 17,
+    "summary": "Rượu vang tinh tế, cảnh quan, hương vị thùng độc quyền, và nhiều hơn nữa",
+    "description": "Rượu vang, không có gì gợi lên được mùi hương Giáng Sinh hơn là các ... ủ trong thùng gỗ sồi Pháp nên Mousai Merlot vô cùng quyến rũ với hương vani pha chút tinh tế của chocolate và các hạt gia vị. ... Hương thơm của giống nho Moscato là độc nhất vô nhị, rất",
     "imageCover": "tour-7-cover.jpg",
     "keySearch": "16_tour.png",
     "locations": [
@@ -452,6 +452,56 @@
         "description": "Raymond Vineyard and Cellar",
         "type": "Point",
         "coordinates": [-122.434697, 38.482181],
+        "day": 5
+      }
+    ]
+  },
+  {
+    "startLocation": {
+      "description": "Việt Nam",
+      "type": "Point",
+      "coordinates": [106.6968302, 10.7797908],
+      "address": "Nhà thờ Đức Bà"
+    },
+    "ratingsAverage": 4.4,
+    "ratingsQuantity": 7,
+    "images": ["tour-10-1.jpg", "tour-10-2.jpg", "tour-10-3.jpg"],
+    "startDates": [
+      "2021-02-12T10:00:00.000Z",
+      "2021-04-14T09:00:00.000Z",
+      "2021-09-01T09:00:00.000Z"
+    ],
+    "_id": "5c88fa8cf4afda39709c292c",
+    "name": "Nhà thờ Đức Bà sài gòn",
+    "duration": 5,
+    "maxGroupSize": 8,
+    "difficulty": "easy",
+    "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a23412f8fb814b56fa18c"],
+    "price": 197,
+    "summary": "Nhà thờ Đức Bà Sài Gòn – kiệt tác kiến trúc gần 140 năm tuổi",
+    "description": "Thánh đường là khu chính được thiết kế đặc biệt, rộng nhất tại nhà thờ, có thể chịu tới gấp 10 lần toàn bộ kiến trúc bên trong với sức chứa hơn 1.200 người. Toàn bộ chiều dài của thánh đường là 93 m, rộng 35 m, chiều cao của mái vòm gần 21 m với thiết kế gồm lòng chính, hai lòng phụ và hai bên là hai dãy nhà nguyện.",
+    "imageCover": "tour-10-cover.jpg",
+    "keySearch": "2_tour.png",
+    "locations": [
+      {
+        "_id": "5c88fa8cf4afda39709c296f",
+        "description": "Khách sản",
+        "type": "Point",
+        "coordinates": [106.6968302, 10.7797908],
+        "day": 1
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c296e",
+        "description": "Quán ba",
+        "type": "Point",
+        "coordinates": [106.6968302, 10.7797908],
+        "day": 3
+      },
+      {
+        "_id": "5c88fa8cf4afda39709c296d",
+        "description": "Nhà hàng",
+        "type": "Point",
+        "coordinates": [106.6968302, 10.7798013],
         "day": 5
       }
     ]

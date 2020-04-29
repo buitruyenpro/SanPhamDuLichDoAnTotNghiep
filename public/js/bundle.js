@@ -8798,33 +8798,32 @@ var bookTour = /*#__PURE__*/function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            window.location.href = '/search-by-image';
-            _context.prev = 1;
-            _context.next = 4;
+            _context.prev = 0;
+            _context.next = 3;
             return (0, _axios.default)("/api/v1/bookings/checkout-session/".concat(tourId));
 
-          case 4:
+          case 3:
             session = _context.sent;
-            _context.next = 7;
+            _context.next = 6;
             return stripe.redirectToCheckout({
               sessionId: session.data.session.id
             });
 
-          case 7:
-            _context.next = 12;
+          case 6:
+            _context.next = 11;
             break;
 
-          case 9:
-            _context.prev = 9;
-            _context.t0 = _context["catch"](1);
+          case 8:
+            _context.prev = 8;
+            _context.t0 = _context["catch"](0);
             (0, _alerts.showAlert)('error', _context.t0);
 
-          case 12:
+          case 11:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[1, 9]]);
+    }, _callee, null, [[0, 8]]);
   }));
 
   return function bookTour(_x) {
@@ -9155,8 +9154,9 @@ if (searchForm) {
       var form = new FormData();
       form.append('photo', document.getElementById('photo-search').files[0]);
       (0, _searchImages.searchImages)(form);
+      document.getElementById('photo-search').value = null;
     }
-  }, 100);
+  }, 5);
 }
 
 if (logOutBtn) logOutBtn.addEventListener('click', _login.logout); // Cập nhật thông tin người dùng
@@ -9176,7 +9176,7 @@ if (commentForm) commentForm.addEventListener('submit', function (e) {
   var review = document.querySelector('.input--comment').value;
   var tour = document.querySelector('.form--hidden-comment').value;
 
-  _axios.default.post('http://localhost:5000/classify', {
+  _axios.default.post('http://localhost:5001/classify', {
     comment: review
   }).then(function (response) {
     var classify = response.data.message;
@@ -9269,7 +9269,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62991" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60895" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

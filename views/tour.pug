@@ -39,16 +39,16 @@ block content
     .overview-box
       div
         .overview-box__group
-          h2.heading-secondary.ma-bt-lg Quick facts
+          h2.heading-secondary.ma-bt-lg Thông tin
 
           - const date = tour.startDates[0].toLocaleString('en-us', {month: 'long', year: 'numeric'})
-          +overviewBox('Next date', date, 'calendar')
-          +overviewBox('Difficulty', tour.difficulty, 'trending-up')
-          +overviewBox('Participants', `${tour.maxGroupSize} people`, 'user')
-          +overviewBox('Rating', `${tour.ratingsAverage} / 5`, 'star')
+          +overviewBox('Ngày du lịch', date, 'calendar')
+          +overviewBox('Độ khó', tour.difficulty, 'trending-up')
+          +overviewBox('Những người tham gia', `${tour.maxGroupSize} người`, 'user')
+          +overviewBox('Xếp hạng sao', `${tour.ratingsAverage} / 5`, 'star')
 
         .overview-box__group
-          h2.heading-secondary.ma-bt-lg Your tour guides
+          h2.heading-secondary.ma-bt-lg Hướng dẫn viên của bạn
 
           each guide in tour.guides
             .overview-box__detail
@@ -61,7 +61,7 @@ block content
               span.overview-box__text= guide.name
 
     .description-box
-      h2.heading-secondary.ma-bt-lg= `About ${tour.name} tour`
+      h2.heading-secondary.ma-bt-lg= `Thông tin về ${tour.name}`
       - const parapraphs = tour.description.split('\n');
       each p in parapraphs
         p.description__text= p
@@ -86,32 +86,35 @@ block content
       img.cta__img.cta__img--1(src=`/img/tours/${tour.images[1]}`, alt='Tour picture')
       img.cta__img.cta__img--2(src=`/img/tours/${tour.images[2]}`, alt='Tour picture')
       .cta__content
-        h2.heading-secondary What are you waiting for?
-        p.cta__text= `${tour.duration} days. 1 adventure. Infinite memories. Make it yours today!`
-        
+        if !isExit
+          h2.heading-secondary Bạn còn chờ đợi gì nữa!
+          p.cta__text= `${tour.duration} ngày. 1 cuộc phiêu lưu. Ký ức vô tận. Làm cho nó của bạn ngày hôm nay! `
+        else
+          h2.heading-secondary Bình chọn đánh giá của bạn
         if user
-          .demo-btns
-              div
-                .buttons
-                  p
-                    button.modal__trigger.btn.btn--green.span-all-row(href='' data-modal='#modal') đặt tour ngay!
+          if !isExit
+            .demo-btns
+                div
+                  .buttons
+                    p
+                      button.modal__trigger.btn.btn--green.span-all-row(href='' data-modal='#modal') đặt tour ngay!
 
         
         else
           button.btn.btn--green.span-all-rows(href='/login') Log in to book tour
 
-      
-      form.form--comment
-        .comment
-          .stars(data-rating='0')
-            span.star &nbsp;
-            span.star &nbsp;
-            span.star &nbsp;
-            span.star &nbsp;
-            span.star &nbsp;
-          textarea.input--comment.form-control.form__input(rows='3', name='review')
-          input.form--hidden-comment(type = "hidden" value=`${tour._id}`)
-        button.btn.btn--green.span-all-rows.btn-comment Comment
+      if isExit
+        form.form--comment
+          .comment
+            .stars(data-rating='0')
+              span.star &nbsp;
+              span.star &nbsp;
+              span.star &nbsp;
+              span.star &nbsp;
+              span.star &nbsp;
+            textarea.input--comment.form-control.form__input(rows='3', name='review')
+            input.form--hidden-comment(type = "hidden" value=`${tour._id}`)
+          button.btn.btn--green.span-all-rows.btn-comment Comment
   // Modal
   #modal.modal.modal__bg(role='dialog' aria-hidden='false')
     .modal__dialog

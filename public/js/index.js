@@ -56,9 +56,11 @@ if (searchForm) {
       const form = new FormData();
       form.append('photo', document.getElementById('photo-search').files[0]);
       searchImages(form);
+      document.getElementById('photo-search').value = null;
     }
-  }, 100);
+  }, 5);
 }
+
 if (logOutBtn) logOutBtn.addEventListener('click', logout);
 
 // Cập nhật thông tin người dùng
@@ -80,7 +82,7 @@ if (commentForm)
     const review = document.querySelector('.input--comment').value;
     const tour = document.querySelector('.form--hidden-comment').value;
     axios
-      .post('http://localhost:5000/classify', {
+      .post('http://localhost:5001/classify', {
         comment: review
       })
       .then(function(response) {

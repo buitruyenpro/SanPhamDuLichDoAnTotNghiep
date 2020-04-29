@@ -5,3 +5,6 @@ npm update tengoi
 npm i eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-config-airbnb eslint-plugin-node eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react --save-dev
 171.251.150.77
 //https://www.kevinleary.net/regex-route-express/
+chạy ứng dụng:
+npm start
+npm run watch:js

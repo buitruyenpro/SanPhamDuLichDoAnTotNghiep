@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 process.on('uncaughtException', err => {
   process.exit(1);
 });
